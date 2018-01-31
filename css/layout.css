@@ -1,0 +1,204 @@
+@charset "UTF-8";
+html, body { height: 100%; }
+
+body { margin: 0; }
+
+body, input, textarea {
+    font-family: 'Nanum Square', '나눔고딕', '맑은 고딕', 'NanumGothicWeb', 'NanumGothic', '나눔고딕', 'dotum', '돋움', sans-serif;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    background: #000;
+    box-sizing: border-box;
+    padding: 0 20px;
+    opacity: 0.65;
+    z-index: 100;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header h1 {
+    margin: 0;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    font-size: 18px;
+    letter-spacing: 5px;
+}
+
+header nav {
+    float: right;
+    font-size: 0;
+    white-space: nowrap;
+}
+
+header nav a {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 10px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+header::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+body>section {
+    position: relative;
+    box-sizing: border-box;
+    min-height: 300px;
+    height: 100%;
+}
+
+section:nth-child(odd) {
+    background: #ff857b;
+}
+
+section:nth-child(even) {
+    background: #578eff;
+}
+
+section.main {
+}
+
+section.main .banner {
+    height: 100%;
+}
+
+.banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner .items {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner .items-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.banner .items .item {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.banner .items .item .image {
+    width: 100%;
+    height: 100%;
+}
+
+/* TODO: object-fit polyfill 적용 */
+.banner .items .item .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner .items .items-wrapper .item .text {
+    position: absolute;
+    left: 20%;
+    bottom: 20%;
+    opacity: 0.7;
+    background: #000;
+    color: #fff;
+    padding: 15px;
+    transform: translate(-15%, 15%);
+}
+
+.banner .items .items-wrapper .item .text .title {
+    font-size: 30pt;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.banner .items .items-wrapper .item .text .description {
+    font-size: 14pt;
+    line-height: 1.4;
+}
+
+.banner .controls>button {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    border-radius: 25px;
+    transform: translateY(-50%);
+    background: #000;
+    opacity: 0.6;
+    border: none;
+    outline: none;
+}
+
+.banner .controls>button::before {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    border: solid #fff;
+    border-width: 2px 0 0 2px;
+    transform-origin: 50% 50%;
+}
+
+.banner .controls .prev {
+    left: 20px;
+}
+
+.banner .controls .prev::before {
+    transform: rotate(-45deg);
+    left: 18px;
+}
+
+.banner .controls .next {
+    right: 20px;
+}
+
+.banner .controls .next::before {
+    transform: rotate(135deg);
+    right: 18px;
+}
+
+.blind {
+    position: absolute;
+    left: -1000000px;
+    /*top: -50px;*/
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    display: block;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.text-hidden {
+    text-indent: -1000000px;
+    overflow: hidden;
+}
