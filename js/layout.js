@@ -12,24 +12,25 @@
         document.title = 'IGRUS - ' + section.toUpperCaseFirst();
     })();
 
+    // On Dom Ready
     $(function () {
+
         // Menu Click Events
         (function () {
             var $scrollTarget = $('html, body');
             var $nav = $('header nav');
+            var MIN_TIME = 300;
 
             $nav.find('>a').on('click', function (e) {
                 e.preventDefault();
 
                 var section = $(this).attr('href').substring(1);
-                var $target = $('a[name=' + section + ']');
+                var $section = $('a[name=' + section + ']');
 
                 var pastTop = $scrollTarget.scrollTop();
 
-                var top = $target.offset().top;
+                var top = $section.offset().top;
                 var diff = Math.abs(pastTop - top);
-
-                var MIN_TIME = 300;
 
                 $scrollTarget.animate({ scrollTop: top }, Math.min(diff, MIN_TIME), 'swing');
 
@@ -40,5 +41,43 @@
                 return false;
             });
         })();
+
+        // Banner
+        (function () {
+            var $banner = $('section.main .banner');
+            var $items = $banner.find('.items');
+            var $wrapper = $items.find('.items-wrapper');
+
+            var $prev = $banner.find('.prev');
+            var $next = $banner.find('.next');
+
+            var now = 0;
+
+            function move(index) {
+                if (index < 0) return;
+                if (index >= $wrapper.children().length) return;
+
+                $items.scrollLeft(0);
+                $wrapper.css('transform', 'perspective(1000px) translateX(' + index * -100 + '%)');
+
+                now = index;
+            }
+
+            // Banner Control Button Events
+            $prev.on('click', function () {
+                move(now - 1);
+            });
+
+            $next.on('click', function () {
+                move(now + 1);
+            });
+
+            // Banner Link Focus
+            $wrapper.on('focus', 'a', function () {
+                var index = $(this).index();
+                move(index);
+            });
+        })();
+
     });
 })(jQuery);
