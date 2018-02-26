@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta charset="UTF-8">
-    <title>IGRUS - MAIN</title>
+    <title>IGRUS</title>
     <link rel="stylesheet" href="//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css">
     <link rel="stylesheet" href="css/layout.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/layout.js"></script>
 </head>
-<body>
+<body tabindex="-1">
     <header>
         <h1><a href=".">IGRUS</a></h1>
 
         <nav>
-            <a href="#main">MAIN</a>
-            <a href="#introduce">INTRODUCE</a>
-            <a href="#activity">ACTIVITY</a>
-            <a href="#history">HISTORY</a>
-            <a href="#apply">APPLY</a>
-            <a href="#contact">CONTACT</a>
+            <button class="opener xs sm text-hidden">Open</button>
+            <div class="menu-wrap lg md xl">
+                <a tabindex="0" data-target="main" href="#main">MAIN</a>
+                <a tabindex="0" data-target="introduce" href="#introduce">INTRODUCE</a>
+                <a tabindex="0" data-target="activity" href="#activity">ACTIVITY</a>
+                <a tabindex="0" data-target="history" href="#history">HISTORY</a>
+                <a tabindex="0" data-target="apply" href="#apply">APPLY</a>
+                <a tabindex="0" data-target="contact" href="#contact">CONTACT</a>
+            </div>
         </nav>
     </header>
 
-    <section class="main">
+    <section class="main" data-section="main">
         <h2 class="blind"><a name="main">Main</a></h2>
 
         <div class="banner">
@@ -72,27 +76,85 @@
         </div>
     </section>
 
-    <section>
-        <h2 class="blind"><a name="introduce">Introduce</a></h2>
-
+    <section class="introduce" data-section="introduce">
+        <a class="blind" name="introduce"></a>
+        <h2>INTRODUCE</h2>
+        <div class="figures">
+            <figure>
+                <div class="img-wrap"><img src="images/members.png"></div>
+                <figcaption>
+                    <div class="name">Members</div>
+                    <div class="value">254</div>
+                </figcaption>
+            </figure>
+            <figure>
+                <div class="img-wrap"><img src="images/prize.png"></div>
+                <figcaption>
+                    <div class="name">Members</div>
+                    <div class="value">254</div>
+                </figcaption>
+            </figure>
+            <figure>
+                <div class="img-wrap"><img src="images/prize.png"></div>
+                <figcaption>
+                    <div class="name">Members</div>
+                    <div class="value">254</div>
+                </figcaption>
+            </figure>
+            <figure>
+                <div class="img-wrap"><img src="images/prize.png"></div>
+                <figcaption>
+                    <div class="name">Members</div>
+                    <div class="value">254</div>
+                </figcaption>
+            </figure>
+            <figure>
+                <div class="img-wrap"><img src="images/prize.png"></div>
+                <figcaption>
+                    <div class="name">Members</div>
+                    <div class="value">254</div>
+                </figcaption>
+            </figure>
+            <figure>
+                <div class="img-wrap"><img src="images/prize.png"></div>
+                <figcaption>
+                    <div class="name">Members</div>
+                    <div class="value">254</div>
+                </figcaption>
+            </figure>
+            <figure>
+                <div class="img-wrap"><img src="images/prize.png"></div>
+                <figcaption>
+                    <div class="name">Members</div>
+                    <div class="value">254</div>
+                </figcaption>
+            </figure>
+            <figure>
+                <div class="img-wrap"><img src="images/prize.png"></div>
+                <figcaption>
+                    <div class="name">Members</div>
+                    <div class="value">254</div>
+                </figcaption>
+            </figure>
+        </div>
     </section>
 
-    <section>
+    <section class="activity" data-section="activity">
         <h2 class="blind"><a name="activity">Activity</a></h2>
 
     </section>
 
-    <section>
+    <section class="history" data-section="history">
         <h2 class="blind"><a name="history">History</a></h2>
 
     </section>
 
-    <section>
+    <section class="apply" data-section="apply">
         <h2 class="blind"><a name="apply">Apply</a></h2>
 
     </section>
 
-    <section>
+    <section class="contact" data-section="contact">
         <h2 class="blind"><a name="contact">Contact</a></h2>
 
     </section>
