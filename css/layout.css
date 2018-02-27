@@ -144,6 +144,10 @@ section h2 {
     letter-spacing: 10px;
 }
 
+section h2 a {
+    display: block;
+}
+
 .main {
 }
 
